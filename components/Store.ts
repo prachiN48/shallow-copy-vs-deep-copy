@@ -19,3 +19,7 @@ export const shallowCopyStore = (store: Store) : Store => {
 export const deepCloneStore = (store: Store) : Store => {
     return _.cloneDeep(store)
 }
+
+export const structuredCloneStore = (store: Store) : Store => {
+    return structuredClone(store)
+}
