@@ -6,7 +6,7 @@ export interface Store {
     books: Book[]
 }
 
-export interface Book {
+interface Book {
     id: number,
     title: string,
     author: string
@@ -14,6 +14,10 @@ export interface Book {
 
 export const shallowCopyStore = (store: Store) : Store => {
     return {...store}
+}
+
+export const assignedCopyStore = (store: Store) : Store => {
+    return Object.assign({}, store)
 }
 
 export const deepCloneStore = (store: Store) : Store => {
