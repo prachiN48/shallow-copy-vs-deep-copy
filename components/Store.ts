@@ -27,3 +27,7 @@ export const deepCloneStore = (store: Store) : Store => {
 export const structuredCloneStore = (store: Store) : Store => {
     return structuredClone(store)
 }
+
+export const jsonParsedCloneStore = (store: Store) : Store => {
+    return JSON.parse(JSON.stringify(store))
+}
