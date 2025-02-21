@@ -12,7 +12,7 @@ interface Book {
     author: string
 }
 
-export const shallowCopyStore = (store: Store) : Store => {
+export const destructuredCopyStore = (store: Store) : Store => {
     return {...store}
 }
 

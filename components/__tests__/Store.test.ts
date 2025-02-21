@@ -1,6 +1,12 @@
-import {assignedCopyStore, deepCloneStore, shallowCopyStore, Store, structuredCloneStore} from "../Store";
+import {
+    assignedCopyStore,
+    deepCloneStore,
+    destructuredCopyStore,
+    Store,
+    structuredCloneStore
+} from "../Store";
 
-describe('shallowCopy', () => {
+describe('destructuredCopy', () => {
     it('should create a copy of the store object', () => {
         const originalStore: Store = {
             id: 1,
@@ -13,7 +19,7 @@ describe('shallowCopy', () => {
                 }
             ]
         }
-        const copyStore = shallowCopyStore(originalStore)
+        const copyStore = destructuredCopyStore(originalStore)
         copyStore.name = 'new book store'
         expect(copyStore.name).not.toBe(originalStore.name)
         copyStore.books.push({
