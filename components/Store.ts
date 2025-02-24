@@ -9,7 +9,8 @@ export interface Store {
 interface Book {
     id: number,
     title: string,
-    author: string
+    author: string,
+    firstPublished?: Date
 }
 
 export const destructuredCopyStore = (store: Store) : Store => {
@@ -20,6 +21,10 @@ export const assignedCopyStore = (store: Store) : Store => {
     return Object.assign({}, store)
 }
 
+export const jsonParsedCloneStore = (store: Store) : Store => {
+    return JSON.parse(JSON.stringify(store))
+}
+
 export const deepCloneStore = (store: Store) : Store => {
     return _.cloneDeep(store)
 }
@@ -28,6 +33,3 @@ export const structuredCloneStore = (store: Store) : Store => {
     return structuredClone(store)
 }
 
-export const jsonParsedCloneStore = (store: Store) : Store => {
-    return JSON.parse(JSON.stringify(store))
-}
