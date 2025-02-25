@@ -14,7 +14,10 @@ interface Book {
 }
 
 export const destructuredCopyStore = (store: Store) : Store => {
-    return {...store}
+    return {
+        ...store,
+        books: [...store.books]
+    }
 }
 
 export const assignedCopyStore = (store: Store) : Store => {
